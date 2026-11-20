@@ -10,7 +10,7 @@
 <meta name="keywords" content="Juls Salas, LIONHEART ATHLETICS, entrenador personal, nutricionista deportivo, obesidad y diabetes, asesoría nutricional online, entrenamiento de fuerza, recomposición corporal">
 <meta name="author" content="Juls Salas - LIONHEART ATHLETICS">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#060B14">
+<meta name="theme-color" content="#050505">
 
 <!-- FAVICON -->
 <link rel="icon" type="image/png" href="LogoLIONHEART.png">
@@ -28,28 +28,28 @@
 <meta name="twitter:description" content="Entrenamiento personal y nutrición deportiva basada en evidencia. Agenda tu entrevista de valoración.">
 <meta name="twitter:image" content="Fotohero.png">
 
-<link href="https://fonts.googleapis.com/css2?family=Oswald:ital,wght@0,400;0,600;0,700;1,700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:ital,wght@0,400;0,600;0,700;1,700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
 <style>
 :root {
-  --bg-dark: #060B14;
-  --blue-electric: #0755B8;
-  --blue-hover: #054291;
-  --gold: #F5B900;
-  --gold-hover: #dba400;
+  --black: #050505;
+  --black-soft: #111111;
+  --yellow: #F5B900;
+  --yellow-hover: #dca500;
   --white: #FFFFFF;
-  --gray-light: #F1F3F6;
-  --text-dark: #111827;
+  --white-soft: #F5F5F5;
+  --text-dark: #111111;
   --text-muted-dark: #555555;
-  --text-muted-light: #CBD5E1;
-  --border-light: #E2E8F0;
-  --border-dark: #1E293B;
+  --text-muted-light: #CCCCCC;
+  --border-dark: #222222;
+  --border-light: #E5E5E5;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 body { 
-  background-color: var(--white); 
-  color: var(--text-dark); 
+  background-color: var(--black); 
+  color: var(--white); 
   font-family: 'Open Sans', sans-serif; 
   line-height: 1.6;
   overflow-x: hidden;
@@ -57,227 +57,472 @@ body {
 
 h1, h2, h3, h4, .oswald { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
 
+/* =========================================
+   MOBILE FIRST (Estilos base para celular)
+   ========================================= */
+
 /* HEADER */
 header {
-  position: absolute;
-  top: 0; width: 100%;
-  padding: 20px 50px;
+  width: 100%;
+  padding: 16px 20px;
+  background-color: var(--black);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
-}
-.logo { display: flex; align-items: center; gap: 12px; font-size: 1.2rem; font-family: 'Oswald', sans-serif; font-weight: 700; letter-spacing: 1px; color: var(--gold); text-decoration: none; }
-.logo img { height: 38px; width: auto; object-fit: contain; }
-.back-to-store { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 600; color: var(--white); text-decoration: none; letter-spacing: 1px; transition: color 0.3s; }
-.back-to-store:hover { color: var(--gold); }
-.back-to-store i { font-size: 1.2rem; color: var(--blue-electric); }
-
-/* HERO SECTION */
-.hero {
   position: relative;
-  height: 100vh;
-  min-height: 700px;
-  display: flex;
-  align-items: center;
-  padding: 0 10%;
-  background: linear-gradient(to right, rgba(6,11,20,0.96) 15%, rgba(6,11,20,0.45) 65%), url('Fotohero.png') center/cover no-repeat;
+  z-index: 20;
   border-bottom: 1px solid var(--border-dark);
 }
-.hero-content { position: relative; z-index: 2; margin-top: -40px; max-width: 850px; }
-.hero-content h1 { font-size: 4.5rem; font-weight: 700; line-height: 1.1; font-style: italic; letter-spacing: 1px; color: var(--white); }
-.hero-line-2 { display: flex; align-items: center; gap: 20px; margin-top: 5px; }
-.accent-line { width: 50px; height: 5px; background: var(--gold); flex-shrink: 0; }
-.hero-desc { margin-top: 30px; font-size: 0.9rem; color: var(--text-muted-light); max-width: 480px; display: flex; gap: 15px; align-items: stretch; }
-.hero-desc-line { width: 3px; background: var(--blue-electric); flex-shrink: 0; }
-.hero-cta { margin-top: 30px; }
-.hero-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; padding: 12px 28px; }
-.hero-btn i { font-size: 1.2rem; }
+.logo { display: flex; align-items: center; text-decoration: none; }
+.logo img { height: 36px; width: auto; object-fit: contain; display: block; }
+.back-to-store {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+.back-to-store:hover { color: var(--yellow); }
+.back-to-store i { font-size: 1.1rem; color: var(--yellow); }
+
+/* HERO SECTION (Sin sombra negra, imagen completa y más arriba) */
+.hero {
+  position: relative;
+  background-color: var(--black);
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 65px;
+  border-bottom: 2px solid var(--yellow);
+}
+.hero-media {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--black);
+  overflow: hidden;
+}
+.hero-media img {
+  width: 100%;
+  height: auto;
+  max-height: 62vh;
+  object-fit: contain;
+  object-position: center top;
+  display: block;
+}
+.hero-content {
+  padding: 24px 20px 10px;
+  text-align: left;
+  position: relative;
+  z-index: 2;
+}
+.hero-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.accent-line {
+  width: 36px;
+  height: 5px;
+  background: var(--yellow);
+  flex-shrink: 0;
+}
+.hero-content h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1;
+  font-style: italic;
+  letter-spacing: 1.5px;
+  color: var(--white);
+}
+.hero-desc {
+  margin-top: 18px;
+  font-size: 0.9rem;
+  color: var(--text-muted-light);
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+.hero-desc-line {
+  width: 3px;
+  background: var(--yellow);
+  flex-shrink: 0;
+}
+.hero-cta {
+  margin-top: 26px;
+}
+
+/* BOTONES */
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--yellow);
+  color: var(--black);
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 2px solid var(--yellow);
+  padding: 12px 28px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  transition: background 0.25s, transform 0.2s;
+  border-radius: 4px;
+  text-decoration: none;
+  width: 100%;
+}
+.btn-accent:hover {
+  background: var(--yellow-hover);
+  border-color: var(--yellow-hover);
+  transform: translateY(-1px);
+}
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--black);
+  color: var(--yellow);
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 2px solid var(--black);
+  padding: 12px 28px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  transition: all 0.25s;
+  border-radius: 4px;
+  text-decoration: none;
+  width: 100%;
+}
+.btn-dark:hover {
+  background: var(--yellow);
+  color: var(--black);
+  border-color: var(--yellow);
+}
 
 /* SCROLL DOWN INDICATOR */
 .scroll-indicator {
   position: absolute;
-  bottom: -35px;
+  bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
-  width: 70px;
-  height: 70px;
-  background: var(--gold);
+  width: 60px;
+  height: 60px;
+  background: var(--yellow);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  color: var(--bg-dark);
-  border: 10px solid var(--white);
+  font-size: 1.4rem;
+  color: var(--black);
+  border: 8px solid var(--white);
   z-index: 5;
   cursor: pointer;
 }
 
-/* ABOUT SECTION */
+/* ABOUT SECTION (Fondo blanco para lectura limpia) */
 .about-wrapper {
   background-color: var(--white);
-  padding: 70px 20px 60px;
+  color: var(--text-dark);
+  padding: 65px 20px 55px;
 }
 .about-section {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 60px;
 }
-.about-content { flex: 1; min-width: 300px; }
+.section-pre {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--black);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.section-pre::after {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 3px;
+  background: var(--yellow);
+  margin: 6px auto 0;
+}
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  letter-spacing: 1px;
+  color: var(--black);
+}
 
-.section-pre { text-align: center; font-size: 0.75rem; color: var(--blue-electric); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
-.section-title { text-align: center; font-size: 2.5rem; font-weight: 700; margin-bottom: 40px; letter-spacing: 1px; color: var(--bg-dark); }
-
-.stats-row { display: flex; justify-content: space-between; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); padding: 20px 0; margin-bottom: 40px; }
+.stats-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: 18px 0;
+  margin-bottom: 32px;
+}
 .stat-item { text-align: center; flex: 1; }
-.stat-val { font-size: 1.8rem; font-weight: 700; color: var(--blue-electric); }
-.stat-lbl { font-size: 0.65rem; color: var(--text-muted-dark); text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; font-weight: 600; }
+.stat-val { font-family: 'Oswald', sans-serif; font-size: 1.7rem; font-weight: 700; color: var(--black); }
+.stat-lbl { font-size: 0.62rem; color: var(--text-muted-dark); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; font-weight: 700; }
 
-.trainer-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-.trainer-name { color: var(--bg-dark); font-size: 1.3rem; font-weight: 700; letter-spacing: 1px; border-left: 4px solid var(--gold); padding-left: 12px; }
-.social-mini { display: flex; gap: 15px; color: var(--blue-electric); font-size: 1.2rem; }
-.social-mini i { transition: color 0.3s; }
-.social-mini i:hover { color: var(--gold); cursor: pointer; }
+.trainer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.trainer-name {
+  color: var(--black);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-left: 4px solid var(--yellow);
+  padding-left: 10px;
+}
+.social-mini { display: flex; gap: 14px; color: var(--black); font-size: 1.25rem; }
+.social-mini i { transition: color 0.25s; cursor: pointer; }
+.social-mini i:hover { color: var(--yellow); }
 
-.about-text { font-size: 0.9rem; color: var(--text-muted-dark); margin-bottom: 15px; }
+.about-text { font-size: 0.9rem; color: var(--text-muted-dark); margin-bottom: 14px; }
 .about-text p { margin-bottom: 14px; }
-.read-more { color: var(--blue-electric); font-size: 0.75rem; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 40px; transition: color 0.3s; }
-.read-more:hover { color: var(--blue-hover); text-decoration: underline; }
+.read-more {
+  color: var(--black);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 32px;
+  border-bottom: 2px solid var(--yellow);
+  padding-bottom: 2px;
+  transition: color 0.25s;
+}
+.read-more:hover { color: var(--yellow-hover); }
 
-.video-section-title { font-size: 0.8rem; color: var(--blue-electric); font-weight: 700; margin-bottom: 15px; letter-spacing: 1px; }
-.video-grid { display: flex; gap: 15px; margin-bottom: 25px; }
-.vid-thumb { width: 100px; height: 60px; background: var(--bg-dark); position: relative; display: flex; justify-content: center; align-items: center; overflow: hidden; cursor: pointer; border-radius: 4px; border: 2px solid transparent; transition: border-color 0.3s; }
-.vid-thumb:hover { border-color: var(--blue-electric); }
-.vid-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; transition: opacity 0.3s; }
-.vid-thumb:hover img { opacity: 0.9; }
-.vid-thumb i { position: absolute; color: var(--white); font-size: 1.3rem; }
-
-/* BOTONES */
-.btn-accent { background: var(--gold); color: var(--bg-dark); font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 700; border: none; padding: 12px 32px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: background 0.3s, transform 0.2s; border-radius: 4px; text-decoration: none; display: inline-block; }
-.btn-accent:hover { background: var(--gold-hover); transform: translateY(-1px); }
-
-.btn-secondary { background: var(--blue-electric); color: var(--white); font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 700; border: none; padding: 12px 32px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: background 0.3s; border-radius: 4px; text-decoration: none; display: inline-block; }
-.btn-secondary:hover { background: var(--blue-hover); }
+.video-section-title { font-size: 0.85rem; color: var(--black); font-weight: 700; margin-bottom: 12px; letter-spacing: 1px; }
+.video-grid { display: flex; gap: 12px; margin-bottom: 28px; }
+.vid-thumb {
+  flex: 1;
+  max-width: 120px;
+  height: 68px;
+  background: var(--black);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  transition: border-color 0.25s;
+}
+.vid-thumb:hover { border-color: var(--yellow); }
+.vid-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.65; transition: opacity 0.25s; }
+.vid-thumb:hover img { opacity: 0.95; }
+.vid-thumb i { position: absolute; color: var(--yellow); font-size: 1.4rem; }
 
 /* QUICK FORM STRIP */
-.quick-form-strip { background: var(--gray-light); padding: 60px 20px; text-align: center; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
-.quick-form-strip h3 { font-size: 1.5rem; letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase; color: var(--bg-dark); }
-.quick-form-strip h3 span { color: var(--blue-electric); }
-.quick-form-strip p { font-size: 0.75rem; color: var(--text-muted-dark); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 30px; font-weight: 600; }
-.quick-form { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; max-width: 800px; margin: 0 auto; }
+.quick-form-strip {
+  background: var(--black-soft);
+  padding: 50px 20px;
+  text-align: center;
+  border-top: 1px solid var(--border-dark);
+  border-bottom: 1px solid var(--border-dark);
+}
+.quick-form-strip h3 { font-size: 1.5rem; letter-spacing: 1px; margin-bottom: 8px; color: var(--white); }
+.quick-form-strip h3 span { color: var(--yellow); }
+.quick-form-strip p { font-size: 0.75rem; color: var(--text-muted-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px; }
+.quick-form { max-width: 320px; margin: 0 auto; }
 
-/* WHAT WILL WE DO SECTION */
+/* METODOLOGÍA */
 .what-we-do {
-  padding: 80px 20px;
+  padding: 70px 20px;
   text-align: center;
   position: relative;
   color: var(--white);
-  background: linear-gradient(rgba(6,11,20,0.88), rgba(6,11,20,0.95)), url('Fotometodologia.jpg') center/cover fixed;
+  background: linear-gradient(rgba(5,5,5,0.82), rgba(5,5,5,0.92)), url('Fotometodologia.jpg') center/cover no-repeat;
 }
-.what-we-do .section-pre { color: var(--gold); }
-.what-we-do .section-title { font-size: 2rem; margin-bottom: 60px; color: var(--white); }
+.what-we-do .section-pre { color: var(--yellow); }
+.what-we-do .section-pre::after { background: var(--white); }
+.what-we-do .section-title { font-size: 2rem; margin-bottom: 45px; color: var(--white); }
 
-.services-flex { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-bottom: 80px; }
+.services-flex {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 16px;
+  max-width: 500px;
+  margin: 0 auto 60px;
+}
 .srv-item { display: flex; flex-direction: column; align-items: center; }
 .srv-icon-wrap {
-  width: 90px; height: 90px;
+  width: 82px;
+  height: 82px;
   border-radius: 50%;
-  background: rgba(7, 85, 184, 0.15);
-  border: 2px solid var(--blue-electric);
-  display: flex; justify-content: center; align-items: center;
-  font-size: 2rem; color: var(--white);
+  background: rgba(245, 185, 0, 0.08);
+  border: 2px solid var(--yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.9rem;
+  color: var(--yellow);
   position: relative;
-  margin-bottom: 20px;
-  transition: background 0.3s, border-color 0.3s;
+  margin-bottom: 14px;
+  transition: background 0.3s, color 0.3s;
 }
 .srv-item:hover .srv-icon-wrap {
-  background: var(--blue-electric);
-  border-color: var(--gold);
+  background: var(--yellow);
+  color: var(--black);
 }
 .srv-icon-wrap::before {
-  content: ''; position: absolute; top: -8px; left: -8px; right: -8px; bottom: -8px;
-  border: 1px dashed rgba(245, 185, 0, 0.5); border-radius: 50%;
+  content: '';
+  position: absolute;
+  top: -7px; left: -7px; right: -7px; bottom: -7px;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
 }
 .srv-title { font-family: 'Oswald', sans-serif; font-size: 1rem; letter-spacing: 1px; color: var(--white); }
-.srv-desc { font-size: 0.65rem; color: var(--gold); margin-top: 5px; font-weight: 600; letter-spacing: 1px; }
+.srv-desc { font-size: 0.65rem; color: var(--yellow); margin-top: 4px; font-weight: 700; letter-spacing: 1px; }
 
-.metrics-flex { display: flex; justify-content: center; align-items: center; gap: 50px; }
+.metrics-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
 .metric-box { text-align: center; }
-.metric-box h2 { font-size: 4rem; line-height: 1; color: var(--white); }
-.metric-box p { font-size: 0.75rem; color: var(--text-muted-light); text-transform: uppercase; letter-spacing: 2px; margin-top: 5px; }
-.metric-center { width: 120px; height: 120px; border: 4px solid var(--gold); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 3.5rem; color: var(--gold); background: rgba(7, 85, 184, 0.2); box-shadow: 0 0 25px rgba(7, 85, 184, 0.35); }
+.metric-box h2 { font-size: 2.4rem; line-height: 1; color: var(--white); }
+.metric-box p { font-size: 0.65rem; color: var(--text-muted-light); text-transform: uppercase; letter-spacing: 2px; margin-top: 5px; }
+.metric-center {
+  width: 76px;
+  height: 76px;
+  border: 3px solid var(--yellow);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2rem;
+  color: var(--yellow);
+  background: rgba(5, 5, 5, 0.7);
+  flex-shrink: 0;
+}
 
 /* CONTACT SECTION */
-.contact-section { padding: 80px 20px 70px; background: var(--gray-light); text-align: center; }
-.contact-container { display: flex; flex-direction: column; align-items: center; gap: 18px; margin: 0 auto; max-width: 420px; }
-.c-item { display: flex; align-items: center; justify-content: flex-start; gap: 20px; width: 100%; background: var(--white); padding: 18px 24px; border-radius: 8px; border: 1px solid var(--border-light); box-shadow: 0 2px 10px rgba(6, 11, 20, 0.04); }
-.c-icon { font-size: 2rem; color: var(--blue-electric); width: 40px; text-align: center; flex-shrink: 0; }
+.contact-section {
+  padding: 70px 20px 60px;
+  background: var(--white-soft);
+  text-align: center;
+}
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin: 0 auto;
+  max-width: 420px;
+}
+.c-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  background: var(--white);
+  padding: 16px 20px;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--yellow);
+}
+.c-icon { font-size: 1.8rem; color: var(--black); width: 36px; text-align: center; flex-shrink: 0; }
 .c-text { text-align: left; }
-.c-text h4 { font-size: 0.65rem; color: var(--blue-electric); letter-spacing: 1px; margin-bottom: 2px; }
-.c-text p { font-size: 0.95rem; font-weight: 600; color: var(--bg-dark); }
+.c-text h4 { font-size: 0.65rem; color: var(--text-muted-dark); letter-spacing: 1px; margin-bottom: 2px; }
+.c-text p { font-size: 0.9rem; font-weight: 700; color: var(--black); }
 
 /* FOOTER */
-footer { background: var(--bg-dark); border-top: 3px solid var(--blue-electric); padding: 30px 50px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; font-size: 0.7rem; color: var(--text-muted-light); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
-.f-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+footer {
+  background: var(--black);
+  border-top: 3px solid var(--yellow);
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--text-muted-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.f-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 22px; }
 .f-links a { color: var(--white); text-decoration: none; transition: color 0.2s; cursor: pointer; }
-.f-links a:hover { color: var(--gold); }
-.f-social { display: flex; align-items: center; gap: 20px; }
+.f-links a:hover { color: var(--yellow); }
+.f-social { display: flex; align-items: center; gap: 18px; }
 .f-social i { font-size: 1.2rem; color: var(--white); cursor: pointer; transition: color 0.2s; }
-.f-social i:hover { color: var(--gold); }
-.f-logo { display: flex; align-items: center; gap: 10px; font-family: 'Oswald', sans-serif; font-size: 1.2rem; color: var(--gold); letter-spacing: 1px; }
+.f-social i:hover { color: var(--yellow); }
+.f-logo { display: flex; align-items: center; gap: 10px; font-family: 'Oswald', sans-serif; font-size: 1.15rem; color: var(--yellow); letter-spacing: 1px; }
 .f-logo img { height: 28px; width: auto; object-fit: contain; }
 
 /* POPUP DISCRETO DE ACEPTACIÓN */
 .legal-banner {
   position: fixed;
-  bottom: 20px;
+  bottom: 12px;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 32px);
+  width: calc(100% - 24px);
   max-width: 780px;
-  background: rgba(6, 11, 20, 0.95);
+  background: rgba(5, 5, 5, 0.96);
   backdrop-filter: blur(8px);
   color: var(--text-muted-light);
   border: 1px solid var(--border-dark);
-  border-left: 4px solid var(--gold);
-  border-radius: 8px;
-  padding: 14px 20px;
+  border-left: 4px solid var(--yellow);
+  border-radius: 6px;
+  padding: 14px 18px;
   display: none;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  text-align: center;
+  gap: 12px;
   z-index: 999;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   font-size: 0.78rem;
 }
 .legal-banner p { margin: 0; line-height: 1.45; }
-.legal-banner a { color: var(--gold); text-decoration: underline; cursor: pointer; }
+.legal-banner a { color: var(--yellow); text-decoration: underline; cursor: pointer; }
 .legal-banner-btn {
-  background: var(--gold);
-  color: var(--bg-dark);
+  background: var(--yellow);
+  color: var(--black);
   font-family: 'Oswald', sans-serif;
   font-size: 0.8rem;
   font-weight: 700;
   border: none;
-  padding: 8px 20px;
+  padding: 9px 22px;
   border-radius: 4px;
   cursor: pointer;
   letter-spacing: 1px;
   text-transform: uppercase;
-  flex-shrink: 0;
+  width: 100%;
   transition: background 0.2s;
 }
-.legal-banner-btn:hover { background: var(--gold-hover); }
+.legal-banner-btn:hover { background: var(--yellow-hover); }
 
 /* MODALES LEGALES */
 .legal-modal {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(6, 11, 20, 0.75);
+  background: rgba(5, 5, 5, 0.8);
   backdrop-filter: blur(4px);
   z-index: 1000;
   align-items: center;
@@ -287,66 +532,108 @@ footer { background: var(--bg-dark); border-top: 3px solid var(--blue-electric);
 .legal-modal-content {
   background: var(--white);
   color: var(--text-dark);
-  max-width: 620px;
+  max-width: 600px;
   width: 100%;
   max-height: 82vh;
   overflow-y: auto;
   border-radius: 8px;
-  padding: 30px;
+  padding: 28px 24px;
   position: relative;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
-.legal-modal-content h3 { color: var(--bg-dark); font-size: 1.4rem; margin-bottom: 15px; border-left: 4px solid var(--blue-electric); padding-left: 10px; }
+.legal-modal-content h3 { color: var(--black); font-size: 1.35rem; margin-bottom: 14px; border-left: 4px solid var(--yellow); padding-left: 10px; }
 .legal-modal-content p { font-size: 0.85rem; color: var(--text-muted-dark); margin-bottom: 12px; }
 .legal-modal-close {
   position: absolute;
-  top: 16px;
-  right: 18px;
+  top: 14px;
+  right: 16px;
   background: none;
   border: none;
   font-size: 1.4rem;
   color: var(--text-muted-dark);
   cursor: pointer;
 }
-.legal-modal-close:hover { color: var(--bg-dark); }
+.legal-modal-close:hover { color: var(--black); }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .hero-content h1 { font-size: 4rem; }
+/* =========================================
+   TABLET Y DESKTOP (Mejoras progresivas)
+   ========================================= */
+@media (min-width: 768px) {
+  header { padding: 20px 50px; }
+  .logo img { height: 42px; }
+
+  .hero {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    min-height: calc(100vh - 82px);
+    padding: 20px 8% 60px;
+    gap: 40px;
+  }
+  .hero-media {
+    flex: 1;
+    max-width: 50%;
+    align-items: flex-start;
+    margin-top: -20px;
+  }
+  .hero-media img {
+    max-height: 82vh;
+    width: auto;
+    max-width: 100%;
+  }
+  .hero-content {
+    flex: 1;
+    padding: 0;
+  }
+  .hero-content h1 { font-size: 4.8rem; }
+  .accent-line { width: 52px; }
+  .hero-desc { font-size: 0.95rem; max-width: 480px; }
+
+  .btn-accent, .btn-dark { width: auto; }
+
+  .stats-row { padding: 22px 0; }
+  .stat-val { font-size: 2.1rem; }
+  .stat-lbl { font-size: 0.7rem; }
+
+  .what-we-do { background-attachment: fixed; }
+  .services-flex {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 850px;
+    gap: 40px;
+  }
+  .srv-icon-wrap { width: 92px; height: 92px; font-size: 2.1rem; }
+
+  .metrics-flex { gap: 50px; }
+  .metric-box h2 { font-size: 3.8rem; }
+  .metric-box p { font-size: 0.75rem; }
+  .metric-center { width: 115px; height: 115px; border-width: 4px; font-size: 3.3rem; }
+
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    padding: 30px 50px;
+  }
+
+  .legal-banner {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+    bottom: 20px;
+  }
+  .legal-banner-btn { width: auto; flex-shrink: 0; }
 }
-@media (max-width: 768px) {
-  header { padding: 20px 25px; }
-  .header-right { display: none; }
-  
-  .hero-content h1 { font-size: 2.5rem; line-height: 1.2; }
-  .hero-desc { flex-direction: column; gap: 10px; }
-  .hero-desc-line { width: 40px; height: 3px; }
-  
-  .stats-row { flex-direction: row; justify-content: space-around; gap: 10px; }
-  .stat-item { width: auto; }
-  .stat-val { font-size: 1.4rem; }
-  .stat-lbl { font-size: 0.55rem; }
-  
-  .metrics-flex { flex-direction: row; justify-content: center; gap: 15px; }
-  .metric-box h2 { font-size: 2.2rem; }
-  .metric-box p { font-size: 0.6rem; }
-  .metric-center { width: 70px; height: 70px; border-width: 3px; font-size: 2rem; }
 
-  .c-text p { font-size: 0.85rem; }
-  
-  footer { flex-direction: column; gap: 20px; text-align: center; padding: 30px 20px; }
-  .legal-banner { flex-direction: column; text-align: center; bottom: 12px; }
-  .legal-banner-btn { width: 100%; }
+@media (min-width: 1100px) {
+  .hero-content h1 { font-size: 5.5rem; }
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- HEADER (Solo logo, sin texto JULS SALAS) -->
 <header>
   <a href="index.html" class="logo">
     <img src="LogoLIONHEART.png" alt="Logo LIONHEART ATHLETICS">
-    JULS SALAS
   </a>
   <a href="index.html" class="back-to-store">
     <i class="ph ph-arrow-left"></i> LIONATURAL STORE
@@ -355,18 +642,20 @@ footer { background: var(--bg-dark); border-top: 3px solid var(--blue-electric);
 
 <!-- HERO SECTION -->
 <section class="hero">
+  <div class="hero-media">
+    <img src="Fotohero.png" alt="Juls Salas Entrenador Personal">
+  </div>
   <div class="hero-content">
-    <h1>YOU CAN'T BE NORMAL,</h1>
-    <div class="hero-line-2">
+    <div class="hero-title-wrap">
       <div class="accent-line"></div>
-      <h1>YOU NEED TO BE GREAT!</h1>
+      <h1>JULS SALAS</h1>
     </div>
     <div class="hero-desc">
       <div class="hero-desc-line"></div>
       <p>Conoce tu punto de partida y definamos una estrategia personalizada de nutrición y entrenamiento para alcanzar tus objetivos de forma sostenible.</p>
     </div>
     <div class="hero-cta">
-      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0TBooMBHKNg2Zo8zllViyRJqvGEMXbziUnTVY_JVYy2qfoMHiDepyTooCfn1NZaBZHZIY-3ad5" target="_blank" class="btn-accent hero-btn">
+      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0TBooMBHKNg2Zo8zllViyRJqvGEMXbziUnTVY_JVYy2qfoMHiDepyTooCfn1NZaBZHZIY-3ad5" target="_blank" class="btn-accent">
         <i class="ph-bold ph-calendar-blank"></i> AGENDAR VALORACIÓN
       </a>
     </div>
@@ -377,55 +666,53 @@ footer { background: var(--bg-dark); border-top: 3px solid var(--blue-electric);
 <!-- ABOUT SECTION -->
 <div class="about-wrapper" id="sobre-mi">
   <section class="about-section">
-    <div class="about-content">
-      <div class="section-pre">Bienvenido a mi equipo</div>
-      <h2 class="section-title">SOBRE MÍ</h2>
-      
-      <div class="stats-row">
-        <div class="stat-item"><div class="stat-val">9</div><div class="stat-lbl">Competencias</div></div>
-        <div class="stat-item"><div class="stat-val">10+</div><div class="stat-lbl">Años Exp.</div></div>
-        <div class="stat-item"><div class="stat-val">200+</div><div class="stat-lbl">Clientes</div></div>
-      </div>
-      
-      <div class="trainer-header">
-        <div class="trainer-name">JULS SALAS</div>
-        <div class="social-mini">
-          <i class="ph-fill ph-facebook-logo"></i>
-          <i class="ph-fill ph-instagram-logo"></i>
-          <i class="ph-fill ph-tiktok-logo"></i>
-        </div>
-      </div>
-      
-      <div class="about-text">
-        <p>Soy entrenador personal y nutricionista, especializado en el abordaje de la obesidad y la diabetes, y fundador de LIONHEART ATHLETICS. Mi enfoque integra el entrenamiento de fuerza, la nutrición deportiva y estrategias basadas en evidencia científica para ayudarte a transformar tu composición corporal, mejorar tu salud y construir hábitos que puedas mantener a largo plazo.</p>
-        <p>Mi experiencia combina la formación académica con la práctica deportiva. Cuento con tres certificaciones: Nutrición (2023), Entrenamiento Especializado en Pacientes con Obesidad y Diabetes, y Farmacología. Además, he participado en nueve competencias de culturismo, obteniendo tres primeros lugares, cinco segundos lugares y un cuarto lugar. Estos resultados representan la disciplina, la constancia y el compromiso que también forman parte de mi metodología de trabajo.</p>
-        <div id="more-text" style="display: none;">
-          <p>Mi objetivo va más allá de ayudarte a desarrollar fuerza, ganar masa muscular o mejorar tu composición corporal. Busco acompañarte en un proceso de aprendizaje que te permita mejorar tus patrones nutricionales, construir hábitos sostenibles, desarrollar una relación más saludable con la comida y comprender cómo funciona tu cuerpo.</p>
-          <p>Creo que los resultados duraderos no dependen de seguir restricciones o entrenar sin propósito, sino de aprender a alimentarte estratégicamente, entrenar de manera inteligente y adoptar decisiones que favorezcan tu bienestar.</p>
-          <p>Cada proceso parte de tus objetivos, necesidades y condiciones individuales, porque no existen fórmulas universales: existe una estrategia que debe adaptarse a ti.</p>
-          <p><strong>LIONHEART ATHLETICS:</strong> disciplina, conocimiento y estrategia para transformar tu cuerpo y construir una mejor relación con tu bienestar.</p>
-        </div>
-      </div>
-      <a href="javascript:void(0);" class="read-more" id="read-more-btn" onclick="toggleReadMore()">LEER MÁS</a>
-      
-      <div class="video-section-title">VIDEO</div>
-      <div class="video-grid">
-        <div class="vid-thumb">
-          <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=300&auto=format&fit=crop" alt="v1">
-          <i class="ph-fill ph-play-circle"></i>
-        </div>
-        <div class="vid-thumb">
-          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=300&auto=format&fit=crop" alt="v2">
-          <i class="ph-fill ph-play-circle"></i>
-        </div>
-        <div class="vid-thumb">
-          <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=300&auto=format&fit=crop" alt="v3">
-          <i class="ph-fill ph-play-circle"></i>
-        </div>
-      </div>
-      
-      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0TBooMBHKNg2Zo8zllViyRJqvGEMXbziUnTVY_JVYy2qfoMHiDepyTooCfn1NZaBZHZIY-3ad5" target="_blank" class="btn-secondary">HAZ PARTE</a>
+    <div class="section-pre">Bienvenido a mi equipo</div>
+    <h2 class="section-title">SOBRE MÍ</h2>
+    
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-val">9</div><div class="stat-lbl">Competencias</div></div>
+      <div class="stat-item"><div class="stat-val">10+</div><div class="stat-lbl">Años Exp.</div></div>
+      <div class="stat-item"><div class="stat-val">200+</div><div class="stat-lbl">Clientes</div></div>
     </div>
+    
+    <div class="trainer-header">
+      <div class="trainer-name">JULS SALAS</div>
+      <div class="social-mini">
+        <i class="ph-fill ph-facebook-logo"></i>
+        <i class="ph-fill ph-instagram-logo"></i>
+        <i class="ph-fill ph-tiktok-logo"></i>
+      </div>
+    </div>
+    
+    <div class="about-text">
+      <p>Soy entrenador personal y nutricionista, especializado en el abordaje de la obesidad y la diabetes, y fundador de LIONHEART ATHLETICS. Mi enfoque integra el entrenamiento de fuerza, la nutrición deportiva y estrategias basadas en evidencia científica para ayudarte a transformar tu composición corporal, mejorar tu salud y construir hábitos que puedas mantener a largo plazo.</p>
+      <p>Mi experiencia combina la formación académica con la práctica deportiva. Cuento con tres certificaciones: Nutrición (2023), Entrenamiento Especializado en Pacientes con Obesidad y Diabetes, y Farmacología. Además, he participado en nueve competencias de culturismo, obteniendo tres primeros lugares, cinco segundos lugares y un cuarto lugar. Estos resultados representan la disciplina, la constancia y el compromiso que también forman parte de mi metodología de trabajo.</p>
+      <div id="more-text" style="display: none;">
+        <p>Mi objetivo va más allá de ayudarte a desarrollar fuerza, ganar masa muscular o mejorar tu composición corporal. Busco acompañarte en un proceso de aprendizaje que te permita mejorar tus patrones nutricionales, construir hábitos sostenibles, desarrollar una relación más saludable con la comida y comprender cómo funciona tu cuerpo.</p>
+        <p>Creo que los resultados duraderos no dependen de seguir restricciones o entrenar sin propósito, sino de aprender a alimentarte estratégicamente, entrenar de manera inteligente y adoptar decisiones que favorezcan tu bienestar.</p>
+        <p>Cada proceso parte de tus objetivos, necesidades y condiciones individuales, porque no existen fórmulas universales: existe una estrategia que debe adaptarse a ti.</p>
+        <p><strong>LIONHEART ATHLETICS:</strong> disciplina, conocimiento y estrategia para transformar tu cuerpo y construir una mejor relación con tu bienestar.</p>
+      </div>
+    </div>
+    <a href="javascript:void(0);" class="read-more" id="read-more-btn" onclick="toggleReadMore()">LEER MÁS</a>
+    
+    <div class="video-section-title">VIDEO</div>
+    <div class="video-grid">
+      <div class="vid-thumb">
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=300&auto=format&fit=crop" alt="v1">
+        <i class="ph-fill ph-play-circle"></i>
+      </div>
+      <div class="vid-thumb">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=300&auto=format&fit=crop" alt="v2">
+        <i class="ph-fill ph-play-circle"></i>
+      </div>
+      <div class="vid-thumb">
+        <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=300&auto=format&fit=crop" alt="v3">
+        <i class="ph-fill ph-play-circle"></i>
+      </div>
+    </div>
+    
+    <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0TBooMBHKNg2Zo8zllViyRJqvGEMXbziUnTVY_JVYy2qfoMHiDepyTooCfn1NZaBZHZIY-3ad5" target="_blank" class="btn-dark">HAZ PARTE</a>
   </section>
 </div>
 
@@ -434,15 +721,15 @@ footer { background: var(--bg-dark); border-top: 3px solid var(--blue-electric);
   <h3>¿LISTO PARA <span>EMPEZAR?</span></h3>
   <p>ESCRÍBEME AL WHATSAPP PARA RECIBIR TU PROGRAMA PERSONALIZADO</p>
   <div class="quick-form">
-    <a href="https://wa.me/573002158355" target="_blank" class="btn-accent" style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem;">
+    <a href="https://wa.me/573002158355" target="_blank" class="btn-accent">
       <i class="ph-bold ph-whatsapp-logo" style="font-size: 1.3rem;"></i> CONTÁCTAME
     </a>
   </div>
 </section>
 
-<!-- WHAT WILL WE DO -->
+<!-- METODOLOGÍA -->
 <section class="what-we-do">
-  <div class="section-pre" style="margin-bottom:0;">¿Qué haremos?</div>
+  <div class="section-pre">¿Qué haremos?</div>
   <h2 class="section-title">METODOLOGÍA</h2>
   
   <div class="services-flex">
@@ -486,7 +773,7 @@ footer { background: var(--bg-dark); border-top: 3px solid var(--blue-electric);
 <!-- CONTACT SECTION -->
 <section class="contact-section">
   <div class="section-pre">Contacto</div>
-  <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 40px;">PARA MÁS INFORMACIÓN</h2>
+  <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 35px;">PARA MÁS INFORMACIÓN</h2>
   
   <div class="contact-container">
     <div class="c-item">
@@ -529,7 +816,7 @@ footer { background: var(--bg-dark); border-top: 3px solid var(--blue-electric);
   </div>
   <div class="f-logo">
     <img src="LogoLIONHEART.png" alt="Logo LIONHEART ATHLETICS">
-    JULS SALAS
+    LIONHEART ATHLETICS
   </div>
 </footer>
 
@@ -561,7 +848,6 @@ footer { background: var(--bg-dark); border-top: 3px solid var(--blue-electric);
 </div>
 
 <script>
-// Función para el botón Leer Más
 function toggleReadMore() {
   var moreText = document.getElementById("more-text");
   var btnText = document.getElementById("read-more-btn");
@@ -575,7 +861,6 @@ function toggleReadMore() {
   }
 }
 
-// Mostrar aviso discreto si no ha sido aceptado
 window.addEventListener("DOMContentLoaded", function () {
   if (!localStorage.getItem("lionheart_legal_accepted")) {
     document.getElementById("legal-banner").style.display = "flex";
@@ -587,7 +872,6 @@ function acceptLegal() {
   document.getElementById("legal-banner").style.display = "none";
 }
 
-// Control de modales legales
 function openModal(id) {
   document.getElementById(id).style.display = "flex";
 }
@@ -604,4 +888,4 @@ function closeOnBackdrop(event, id) {
 </script>
 
 </body>
-        </html>
+      </html>
