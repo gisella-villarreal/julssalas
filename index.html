@@ -36,6 +36,7 @@
   --black: #050505;
   --black-soft: #111111;
   --yellow: #F5B900;
+  --yellow-soft: rgba(245, 185, 0, 0.55);
   --yellow-hover: #dca500;
   --white: #FFFFFF;
   --text-dark: #111111;
@@ -61,7 +62,7 @@ h1, h2, h3, h4, .oswald { font-family: 'Oswald', sans-serif; text-transform: upp
    MOBILE FIRST (Estilos base para celular)
    ========================================= */
 
-/* HEADER (Transparente sobre la foto del hero, logo mediano) */
+/* HEADER */
 header {
   position: absolute;
   top: 0;
@@ -82,7 +83,7 @@ header {
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.55));
 }
 
-/* HERO SECTION (Foto subida hacia el encabezado + difuminado negro abajo) */
+/* HERO SECTION */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -272,14 +273,14 @@ header {
   font-size: 1.35rem;
 }
 .social-mini a {
-  color: var(--yellow);
+  color: var(--yellow-soft);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   transition: color 0.25s, transform 0.2s;
 }
 .social-mini a:hover {
-  color: var(--black);
+  color: var(--yellow);
   transform: translateY(-1px);
 }
 
@@ -394,16 +395,16 @@ header {
   flex-shrink: 0;
 }
 
-/* QUICK FORM STRIP (Al fondo, justo antes del pie de página) */
+/* QUICK FORM STRIP (Fondo blanco, justo antes del pie de página) */
 .quick-form-strip {
-  background: var(--black-soft);
+  background: var(--white);
   padding: 55px 20px;
   text-align: center;
-  border-top: 1px solid var(--border-dark);
+  border-top: 1px solid var(--border-light);
 }
-.quick-form-strip h3 { font-size: 1.6rem; letter-spacing: 1px; margin-bottom: 8px; color: var(--white); }
+.quick-form-strip h3 { font-size: 1.6rem; letter-spacing: 1px; margin-bottom: 8px; color: var(--black); }
 .quick-form-strip h3 span { color: var(--yellow); }
-.quick-form-strip p { font-size: 0.75rem; color: var(--text-muted-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 26px; }
+.quick-form-strip p { font-size: 0.75rem; color: var(--text-muted-dark); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 26px; font-weight: 600; }
 .quick-form { max-width: 320px; margin: 0 auto; }
 
 /* FOOTER */
@@ -457,8 +458,8 @@ footer {
 .f-links a { color: var(--white); text-decoration: none; transition: color 0.2s; cursor: pointer; }
 .f-links a:hover { color: var(--yellow); }
 .f-social { display: flex; align-items: center; gap: 18px; }
-.f-social a { color: var(--yellow); font-size: 1.3rem; text-decoration: none; display: inline-flex; transition: color 0.2s; }
-.f-social a:hover { color: var(--white); }
+.f-social a { color: var(--yellow-soft); font-size: 1.3rem; text-decoration: none; display: inline-flex; transition: color 0.2s; }
+.f-social a:hover { color: var(--yellow); }
 
 /* POPUP DISCRETO DE ACEPTACIÓN */
 .legal-banner {
@@ -656,10 +657,10 @@ footer {
     <div class="trainer-header">
       <div class="trainer-name">JULS SALAS</div>
       <div class="social-mini">
+        <a href="https://www.instagram.com/salasjuls_im?bqrl=MW84ZWp3azM5bmsyNA==" target="_blank" aria-label="Instagram"><i class="ph-fill ph-instagram-logo"></i></a>
+        <a href="https://www.facebook.com/share/1GAKnUWBzs/" target="_blank" aria-label="Facebook"><i class="ph-fill ph-facebook-logo"></i></a>
         <a href="https://wa.me/573002158355" target="_blank" aria-label="WhatsApp"><i class="ph-fill ph-whatsapp-logo"></i></a>
         <a href="mailto:livinglarge.project21@gmail.com" aria-label="Correo"><i class="ph-fill ph-envelope-simple"></i></a>
-        <a href="#" aria-label="Instagram"><i class="ph-fill ph-instagram-logo"></i></a>
-        <a href="#" aria-label="Facebook"><i class="ph-fill ph-facebook-logo"></i></a>
       </div>
     </div>
     
@@ -691,7 +692,7 @@ footer {
       </div>
     </div>
     
-    <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0TBooMBHKNg2Zo8zllViyRJqvGEMXbziUnTVY_JVYy2qfoMHiDepyTooCfn1NZaBZHZIY-3ad5" target="_blank" class="btn-accent">HAZ PARTE</a>
+    <a href="https://www.fitmentor.net/usuario/registro?organizationId=35784" target="_blank" class="btn-accent">HAZ PARTE</a>
   </section>
 </div>
 
@@ -738,7 +739,7 @@ footer {
   </div>
 </section>
 
-<!-- QUICK FORM (Al fondo, justo antes del pie de página) -->
+<!-- QUICK FORM (Fondo blanco, justo antes del pie de página) -->
 <section class="quick-form-strip">
   <h3>¿LISTO PARA <span>EMPEZAR?</span></h3>
   <p>ESCRÍBEME AL WHATSAPP PARA RECIBIR TU PROGRAMA PERSONALIZADO</p>
@@ -767,10 +768,10 @@ footer {
 
   <div class="f-social">
     <span>SÍGUEME</span>
+    <a href="https://www.instagram.com/salasjuls_im?bqrl=MW84ZWp3azM5bmsyNA==" target="_blank" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+    <a href="https://www.facebook.com/share/1GAKnUWBzs/" target="_blank" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
     <a href="https://wa.me/573002158355" target="_blank" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
     <a href="mailto:livinglarge.project21@gmail.com" aria-label="Correo"><i class="ph ph-envelope-simple"></i></a>
-    <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
-    <a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
   </div>
 </footer>
 
@@ -842,4 +843,4 @@ function closeOnBackdrop(event, id) {
 </script>
 
 </body>
-  </html>
+</html>
