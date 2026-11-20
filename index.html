@@ -130,7 +130,8 @@ header {
   padding: 24px 24px 32px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  overflow-y: auto;
   transform: translateX(100%);
   transition: transform 0.3s ease;
   z-index: 995;
@@ -168,8 +169,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-top: 28px;
-  flex: 1;
+  margin-top: 24px;
 }
 .nav-links a {
   font-family: 'Oswald', sans-serif;
@@ -202,23 +202,16 @@ header {
 }
 
 .nav-footer {
+  margin-top: 24px;
   padding-top: 20px;
   border-top: 1px solid var(--border-dark);
   text-align: center;
-}
-.nav-footer-label {
-  font-size: 0.68rem;
-  color: var(--text-muted-light);
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-  font-weight: 600;
 }
 .nav-social {
   display: flex;
   justify-content: center;
   gap: 20px;
-  font-size: 1.5rem;
+  font-size: 1.55rem;
 }
 .nav-social a {
   color: var(--yellow-soft);
@@ -793,7 +786,6 @@ footer {
   </div>
 
   <div class="nav-footer">
-    <div class="nav-footer-label">Conecta conmigo</div>
     <div class="nav-social">
       <a href="https://www.instagram.com/salasjuls_im?bqrl=MW84ZWp3azM5bmsyNA==" target="_blank" aria-label="Instagram"><i class="ph-fill ph-instagram-logo"></i></a>
       <a href="https://www.facebook.com/share/1GAKnUWBzs/" target="_blank" aria-label="Facebook"><i class="ph-fill ph-facebook-logo"></i></a>
@@ -1039,4 +1031,4 @@ function closeOnBackdrop(event, id) {
 </script>
 
 </body>
-</html>
+  </html>
