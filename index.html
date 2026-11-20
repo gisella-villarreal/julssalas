@@ -18,15 +18,16 @@
 <!-- OPEN GRAPH (WhatsApp, Facebook, LinkedIn) -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_CO">
+<meta property="og:url" content="https://julssalas.pages.dev">
 <meta property="og:title" content="Juls Salas | LIONHEART ATHLETICS">
 <meta property="og:description" content="Conoce tu punto de partida y definamos una estrategia personalizada de nutrición y entrenamiento para alcanzar tus objetivos de forma sostenible.">
-<meta property="og:image" content="Fotohero.png">
+<meta property="og:image" content="https://julssalas.pages.dev/Fotohero.png">
 
 <!-- TWITTER / X CARD -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Juls Salas | LIONHEART ATHLETICS">
 <meta name="twitter:description" content="Entrenamiento personal y nutrición deportiva basada en evidencia. Agenda tu entrevista de valoración.">
-<meta name="twitter:image" content="Fotohero.png">
+<meta name="twitter:image" content="https://julssalas.pages.dev/Fotohero.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Oswald:ital,wght@0,400;0,600;0,700;1,700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -37,8 +38,6 @@
   --yellow: #F5B900;
   --yellow-hover: #dca500;
   --white: #FFFFFF;
-  --white-soft: #F5F5F5;
-  --gray-icon: #8A8A8A;
   --text-dark: #111111;
   --text-muted-dark: #555555;
   --text-muted-light: #CCCCCC;
@@ -62,7 +61,7 @@ h1, h2, h3, h4, .oswald { font-family: 'Oswald', sans-serif; text-transform: upp
    MOBILE FIRST (Estilos base para celular)
    ========================================= */
 
-/* HEADER (Transparente sobre la foto del hero) */
+/* HEADER (Transparente sobre la foto del hero, logo mediano) */
 header {
   position: absolute;
   top: 0;
@@ -75,18 +74,38 @@ header {
   z-index: 20;
 }
 .logo { display: flex; align-items: center; text-decoration: none; }
-.logo img { height: 40px; width: auto; object-fit: contain; display: block; }
+.logo img {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.55));
+}
 
-/* HERO SECTION (Foto cubre todo hasta el header + difuminado negro abajo) */
+/* HERO SECTION (Foto subida hacia el encabezado + difuminado negro abajo) */
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 110px 20px 75px;
-  background: url('Fotohero.png') center top / cover no-repeat;
+  padding: 120px 20px 75px;
+  background-color: var(--black);
   border-bottom: 2px solid var(--yellow);
+}
+.hero-bg-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+.hero-bg-img {
+  width: 100%;
+  height: 124%;
+  object-fit: cover;
+  object-position: center top;
+  transform: translateY(-16%);
+  display: block;
 }
 .hero::after {
   content: '';
@@ -95,9 +114,9 @@ header {
   background: linear-gradient(
     to top,
     #050505 0%,
-    rgba(5, 5, 5, 0.92) 26%,
-    rgba(5, 5, 5, 0.45) 48%,
-    rgba(5, 5, 5, 0) 70%
+    rgba(5, 5, 5, 0.94) 26%,
+    rgba(5, 5, 5, 0.5) 48%,
+    rgba(5, 5, 5, 0) 68%
   );
   z-index: 1;
   pointer-events: none;
@@ -204,7 +223,7 @@ header {
 .section-pre {
   text-align: center;
   font-size: 0.78rem;
-  color: var(--yellow);
+  color: var(--black);
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -216,7 +235,7 @@ header {
   font-weight: 700;
   margin-bottom: 32px;
   letter-spacing: 1px;
-  color: var(--black);
+  color: var(--yellow);
 }
 
 .stats-row {
@@ -239,7 +258,7 @@ header {
   margin-bottom: 18px;
 }
 .trainer-name {
-  color: var(--yellow);
+  color: var(--black);
   font-family: 'Oswald', sans-serif;
   font-size: 1.35rem;
   font-weight: 700;
@@ -250,16 +269,19 @@ header {
 .social-mini {
   display: flex;
   gap: 14px;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
 }
 .social-mini a {
-  color: var(--gray-icon);
+  color: var(--yellow);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  transition: color 0.25s;
+  transition: color 0.25s, transform 0.2s;
 }
-.social-mini a:hover { color: var(--yellow); }
+.social-mini a:hover {
+  color: var(--black);
+  transform: translateY(-1px);
+}
 
 .about-text { font-size: 0.9rem; color: var(--text-muted-dark); margin-bottom: 14px; }
 .about-text p { margin-bottom: 14px; }
@@ -298,8 +320,8 @@ header {
 .vid-thumb:hover { border-color: var(--yellow); }
 .vid-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.65; transition: opacity 0.25s; }
 .vid-thumb:hover img { opacity: 0.95; }
-.vid-thumb i { position: absolute; color: #B5B5B5; font-size: 1.5rem; transition: color 0.25s; }
-.vid-thumb:hover i { color: var(--white); }
+.vid-thumb i { position: absolute; color: var(--white); font-size: 1.55rem; transition: transform 0.25s; }
+.vid-thumb:hover i { transform: scale(1.1); }
 
 /* METODOLOGÍA */
 .what-we-do {
@@ -372,37 +394,6 @@ header {
   flex-shrink: 0;
 }
 
-/* CONTACT SECTION */
-.contact-section {
-  padding: 70px 20px 60px;
-  background: var(--white-soft);
-  text-align: center;
-}
-.contact-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  margin: 0 auto;
-  max-width: 420px;
-}
-.c-item {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  width: 100%;
-  background: var(--white);
-  padding: 16px 20px;
-  border-radius: 6px;
-  border: 1px solid var(--border-light);
-  border-left: 4px solid var(--yellow);
-  text-decoration: none;
-}
-.c-icon { font-size: 1.8rem; color: var(--gray-icon); width: 36px; text-align: center; flex-shrink: 0; }
-.c-text { text-align: left; }
-.c-text h4 { font-size: 0.65rem; color: var(--text-muted-dark); letter-spacing: 1px; margin-bottom: 2px; }
-.c-text p { font-size: 0.9rem; font-weight: 700; color: var(--black); word-break: break-word; }
-
 /* QUICK FORM STRIP (Al fondo, justo antes del pie de página) */
 .quick-form-strip {
   background: var(--black-soft);
@@ -442,12 +433,12 @@ footer {
   align-items: center;
   gap: 10px;
   font-family: 'Oswald', sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   color: var(--yellow);
   letter-spacing: 1px;
   margin-bottom: 4px;
 }
-.f-logo img { height: 28px; width: auto; object-fit: contain; }
+.f-logo img { height: 38px; width: auto; object-fit: contain; }
 .f-location {
   font-size: 0.75rem;
   color: var(--white);
@@ -466,8 +457,8 @@ footer {
 .f-links a { color: var(--white); text-decoration: none; transition: color 0.2s; cursor: pointer; }
 .f-links a:hover { color: var(--yellow); }
 .f-social { display: flex; align-items: center; gap: 18px; }
-.f-social a { color: var(--gray-icon); font-size: 1.25rem; text-decoration: none; display: inline-flex; transition: color 0.2s; }
-.f-social a:hover { color: var(--yellow); }
+.f-social a { color: var(--yellow); font-size: 1.3rem; text-decoration: none; display: inline-flex; transition: color 0.2s; }
+.f-social a:hover { color: var(--white); }
 
 /* POPUP DISCRETO DE ACEPTACIÓN */
 .legal-banner {
@@ -554,11 +545,15 @@ footer {
    ========================================= */
 @media (min-width: 768px) {
   header { padding: 24px 50px; }
-  .logo img { height: 46px; }
+  .logo img { height: 76px; }
 
   .hero {
-    padding: 140px 8% 85px;
-    background-position: center 15%;
+    padding: 150px 8% 85px;
+  }
+  .hero-bg-img {
+    height: 118%;
+    object-position: center 15%;
+    transform: translateY(-10%);
   }
   .hero::after {
     background: linear-gradient(
@@ -616,7 +611,7 @@ footer {
 </head>
 <body>
 
-<!-- HEADER (Solo logo, sin enlace a Lionatural Store) -->
+<!-- HEADER -->
 <header>
   <a href="#" class="logo">
     <img src="LogoLIONHEART.png" alt="Logo LIONHEART ATHLETICS">
@@ -625,6 +620,9 @@ footer {
 
 <!-- HERO SECTION -->
 <section class="hero">
+  <div class="hero-bg-wrap">
+    <img src="Fotohero.png" alt="Juls Salas Entrenador Personal" class="hero-bg-img">
+  </div>
   <div class="hero-content">
     <div class="hero-title-wrap">
       <div class="accent-line"></div>
@@ -740,37 +738,7 @@ footer {
   </div>
 </section>
 
-<!-- CONTACT SECTION -->
-<section class="contact-section">
-  <div class="section-pre">Contacto</div>
-  <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 35px;">PARA MÁS INFORMACIÓN</h2>
-  
-  <div class="contact-container">
-    <a href="https://wa.me/573002158355" target="_blank" class="c-item">
-      <i class="ph ph-whatsapp-logo c-icon"></i>
-      <div class="c-text">
-        <h4>WHATSAPP</h4>
-        <p>+57 300 215 8355</p>
-      </div>
-    </a>
-    <a href="mailto:livinglarge.project21@gmail.com" class="c-item">
-      <i class="ph ph-envelope-simple c-icon"></i>
-      <div class="c-text">
-        <h4>EMAIL</h4>
-        <p>livinglarge.project21@gmail.com</p>
-      </div>
-    </a>
-    <div class="c-item">
-      <i class="ph ph-map-pin c-icon"></i>
-      <div class="c-text">
-        <h4>UBICACIÓN</h4>
-        <p>Barranquilla, Colombia — Online & Presencial</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- QUICK FORM (Ubicado al fondo, justo antes del pie de página) -->
+<!-- QUICK FORM (Al fondo, justo antes del pie de página) -->
 <section class="quick-form-strip">
   <h3>¿LISTO PARA <span>EMPEZAR?</span></h3>
   <p>ESCRÍBEME AL WHATSAPP PARA RECIBIR TU PROGRAMA PERSONALIZADO</p>
@@ -874,4 +842,4 @@ function closeOnBackdrop(event, id) {
 </script>
 
 </body>
-</html>
+  </html>
