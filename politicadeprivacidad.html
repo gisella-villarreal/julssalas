@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad | Juls Salas - LIONHEART ATHLETICS</title>
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#050505">
+<link rel="icon" type="image/png" href="LogoLIONHEART.png">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<style>
+:root {
+  --black: #050505;
+  --black-soft: #111111;
+  --yellow: #F5B900;
+  --yellow-hover: #dca500;
+  --white: #FFFFFF;
+  --text-dark: #111111;
+  --text-muted-dark: #4A4A4A;
+  --text-muted-light: #CCCCCC;
+  --border-dark: #222222;
+  --border-light: #E5E5E5;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--white);
+  color: var(--text-dark);
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .oswald { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+
+/* HEADER */
+header {
+  background-color: var(--black);
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--yellow);
+}
+.logo { display: flex; align-items: center; text-decoration: none; }
+.logo img { height: 52px; width: auto; object-fit: contain; display: block; }
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--yellow);
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1.5px solid var(--yellow);
+  padding: 7px 14px;
+  border-radius: 4px;
+  transition: background 0.25s, color 0.25s;
+}
+.back-btn:hover {
+  background: var(--yellow);
+  color: var(--black);
+}
+
+/* BANNER DE TÍTULO */
+.legal-hero {
+  background-color: var(--black-soft);
+  color: var(--white);
+  padding: 45px 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-dark);
+}
+.legal-hero .pre {
+  font-size: 0.75rem;
+  color: var(--yellow);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.legal-hero h1 {
+  font-size: 2.3rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.legal-hero .date {
+  font-size: 0.8rem;
+  color: var(--text-muted-light);
+}
+
+/* CONTENIDO LEGAL */
+main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 45px 20px 70px;
+}
+.legal-block {
+  margin-bottom: 32px;
+}
+.legal-block h2 {
+  font-size: 1.3rem;
+  color: var(--black);
+  margin-bottom: 12px;
+  border-left: 4px solid var(--yellow);
+  padding-left: 12px;
+  letter-spacing: 0.5px;
+}
+.legal-block p {
+  font-size: 0.92rem;
+  color: var(--text-muted-dark);
+  margin-bottom: 12px;
+}
+.legal-block ul {
+  margin: 8px 0 14px 20px;
+  color: var(--text-muted-dark);
+  font-size: 0.92rem;
+}
+.legal-block li {
+  margin-bottom: 8px;
+}
+.highlight-box {
+  background: #FFFDF5;
+  border: 1px solid #F3E2A9;
+  border-left: 4px solid var(--yellow);
+  padding: 16px 18px;
+  border-radius: 6px;
+  margin: 14px 0;
+  font-size: 0.88rem;
+  color: var(--text-dark);
+}
+a.inline-link {
+  color: var(--black);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--yellow);
+  text-underline-offset: 3px;
+}
+a.inline-link:hover { color: var(--yellow-hover); }
+
+/* FOOTER */
+footer {
+  background: var(--black);
+  border-top: 3px solid var(--yellow);
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--text-muted-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.f-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  color: var(--yellow);
+  letter-spacing: 1px;
+}
+.f-logo img { height: 34px; width: auto; object-fit: contain; }
+.f-sub {
+  font-size: 0.72rem;
+  color: var(--text-muted-light);
+  text-transform: none;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  header { padding: 20px 50px; }
+  .logo img { height: 64px; }
+  .legal-hero { padding: 60px 20px; }
+  .legal-hero h1 { font-size: 3rem; }
+  main { padding: 60px 30px 80px; }
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    padding: 32px 50px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <img src="LogoLIONHEART.png" alt="Logo LIONHEART ATHLETICS">
+  </a>
+  <a href="index.html" class="back-btn">
+    <i class="ph ph-arrow-left"></i> Volver al inicio
+  </a>
+</header>
+
+<section class="legal-hero">
+  <div class="pre">LIONHEART ATHLETICS</div>
+  <h1>Política de Privacidad</h1>
+  <p class="date">Última actualización: Noviembre de 2026</p>
+</section>
+
+<main>
+  <div class="legal-block">
+    <h2>1. Responsable del Tratamiento</h2>
+    <p>En cumplimiento de la <strong>Ley 1581 de 2012</strong>, el <strong>Decreto 1377 de 2013</strong> y demás normas vigentes sobre protección de datos personales en la República de Colombia, informamos que el responsable del tratamiento de tus datos es:</p>
+    <ul>
+      <li><strong>Titular / Marca:</strong> Juls Salas — LIONHEART ATHLETICS</li>
+      <li><strong>Domicilio:</strong> Barranquilla, Atlántico, Colombia</li>
+      <li><strong>Correo electrónico:</strong> <a href="mailto:livinglarge.project21@gmail.com" class="inline-link">livinglarge.project21@gmail.com</a></li>
+      <li><strong>WhatsApp de contacto:</strong> +57 300 215 8355</li>
+    </ul>
+  </div>
+
+  <div class="legal-block">
+    <h2>2. Datos Personales que Recopilamos</h2>
+    <p>Al agendar una entrevista de valoración, registrarte como cliente o comunicarte con nosotros a través de nuestros canales oficiales, podemos recopilar las siguientes categorías de datos:</p>
+    <ul>
+      <li><strong>Datos de identificación y contacto:</strong> nombre completo, correo electrónico, número de teléfono/WhatsApp y ciudad de residencia.</li>
+      <li><strong>Datos sensibles (salud y condición física):</strong> edad, medidas antropométricas, peso, estatura, hábitos alimentarios, nivel de actividad física, objetivos, antecedentes de salud (como obesidad, diabetes, lesiones o alergias) y fotografías de progreso voluntarias.</li>
+    </ul>
+    <div class="highlight-box">
+      <strong>Tratamiento de datos sensibles:</strong> De acuerdo con la Ley 1581 de 2012, no estás obligado a autorizar el tratamiento de datos sensibles. Sin embargo, esta información es estrictamente necesaria para evaluar tu punto de partida y diseñar un plan de entrenamiento y nutrición seguro y personalizado.
+    </div>
+  </div>
+
+  <div class="legal-block">
+    <h2>3. Finalidad del Tratamiento</h2>
+    <p>Tus datos personales serán utilizados exclusivamente para:</p>
+    <ul>
+      <li>Agendar, confirmar y realizar entrevistas de valoración vía Google Meet, WhatsApp o presencial.</li>
+      <li>Diseñar, ajustar y hacer seguimiento a tus planes personalizados de entrenamiento y nutrición deportiva.</li>
+      <li>Gestionar tu registro y evolución dentro de la plataforma de acompañamiento (FitMentor).</li>
+      <li>Responder dudas, solicitudes, quejas o reclamos relacionados con los servicios contratados.</li>
+      <li>Cumplir con obligaciones legales, contables o administrativas cuando corresponda.</li>
+    </ul>
+  </div>
+
+  <div class="legal-block">
+    <h2>4. Plataformas de Terceros y Transferencia de Datos</h2>
+    <p><strong>No vendemos, alquilamos ni compartimos tus datos personales con terceros con fines comerciales.</strong> Para la prestación del servicio utilizamos herramientas externas confiables como <strong>Google Calendar / Google Meet</strong> (agendamiento y videollamadas), <strong>WhatsApp</strong> (comunicación directa) y <strong>FitMentor</strong> (gestión de planes), las cuales operan bajo sus propias políticas de privacidad y estándares de seguridad.</p>
+  </div>
+
+  <div class="legal-block">
+    <h2>5. Uso de Almacenamiento Local y Cookies</h2>
+    <p>Este sitio web no utiliza cookies de rastreo publicitario invasivo. Únicamente empleamos almacenamiento local del navegador (<em>localStorage</em>) para recordar que ya aceptaste nuestro aviso de Términos y Condiciones y Política de Privacidad, evitando mostrarte el mensaje en cada visita.</p>
+  </div>
+
+  <div class="legal-block">
+    <h2>6. Derechos del Titular (Habeas Data)</h2>
+    <p>Como titular de tus datos personales, tienes derecho en todo momento a:</p>
+    <ul>
+      <li><strong>Conocer, actualizar y rectificar</strong> tus datos personales frente al responsable del tratamiento.</li>
+      <li><strong>Solicitar prueba</strong> de la autorización otorgada para el tratamiento de tus datos.</li>
+      <li><strong>Ser informado</strong> sobre el uso que se le ha dado a tu información.</li>
+      <li><strong>Revocar la autorización y/o solicitar la supresión</strong> de tus datos cuando lo desees, siempre que no exista un deber legal o contractual que impida eliminarlos.</li>
+      <li><strong>Presentar quejas</strong> ante la Superintendencia de Industria y Comercio (SIC) por infracciones a la normativa de protección de datos.</li>
+    </ul>
+  </div>
+
+  <div class="legal-block">
+    <h2>7. Procedimiento para Ejercer tus Derechos</h2>
+    <p>Para realizar consultas, actualizaciones o solicitar la eliminación de tus datos, envía un correo electrónico a <a href="mailto:livinglarge.project21@gmail.com" class="inline-link">livinglarge.project21@gmail.com</a> indicando tu nombre completo, el derecho que deseas ejercer y un medio de contacto para responderte.</p>
+    <p>Las consultas serán atendidas en un término máximo de <strong>diez (10) días hábiles</strong> y los reclamos en un término máximo de <strong>quince (15) días hábiles</strong>, conforme a lo establecido en la ley colombiana.</p>
+  </div>
+
+  <div class="legal-block">
+    <h2>8. Seguridad, Conservación y Cambios</h2>
+    <p>Adoptamos medidas técnicas y administrativas razonables para proteger tu información contra pérdida, acceso no autorizado o uso indebido. Conservaremos tus datos únicamente durante el tiempo necesario para cumplir con las finalidades descritas o mientras mantengas una relación activa de asesoría.</p>
+    <p>Esta Política de Privacidad puede ser actualizada en cualquier momento. Cualquier modificación sustancial será publicada en esta misma página.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="f-logo">
+    <img src="LogoLIONHEART.png" alt="Logo LIONHEART ATHLETICS">
+    JULS SALAS
+  </div>
+  <div class="f-sub">Barranquilla, Colombia — Asesorías Online & Presencial</div>
+</footer>
+
+</body>
+</html>                                                                                        </html>
+                                                                                           
