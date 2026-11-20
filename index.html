@@ -7,7 +7,7 @@
 <!-- SEO BÁSICO -->
 <title>Juls Salas | Entrenador Personal y Nutricionista - LIONHEART ATHLETICS</title>
 <meta name="description" content="Entrenamiento personal y nutrición basada en evidencia con Juls Salas. Especialista en obesidad, diabetes y recomposición corporal. Agenda tu valoración.">
-<meta name="keywords" content="Juls Salas, LIONHEART ATHLETICS, entrenador personal, nutricionista deportivo, obesidad y diabetes, asesoría nutricional online, entrenamiento de fuerza, recomposición corporal">
+<meta name="keywords" content="Juls Salas, LIONHEART ATHLETICS, entrenador personal, nutricionista deportivo, obesidad y diabetes, asesoría nutricional online, entrenamiento de fuerza, recomposición corporal, Barranquilla">
 <meta name="author" content="Juls Salas - LIONHEART ATHLETICS">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#050505">
@@ -38,6 +38,7 @@
   --yellow-hover: #dca500;
   --white: #FFFFFF;
   --white-soft: #F5F5F5;
+  --gray-icon: #8A8A8A;
   --text-dark: #111111;
   --text-muted-dark: #555555;
   --text-muted-light: #CCCCCC;
@@ -61,64 +62,51 @@ h1, h2, h3, h4, .oswald { font-family: 'Oswald', sans-serif; text-transform: upp
    MOBILE FIRST (Estilos base para celular)
    ========================================= */
 
-/* HEADER */
+/* HEADER (Transparente sobre la foto del hero) */
 header {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 16px 20px;
-  background-color: var(--black);
+  padding: 18px 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  position: relative;
   z-index: 20;
-  border-bottom: 1px solid var(--border-dark);
 }
 .logo { display: flex; align-items: center; text-decoration: none; }
-.logo img { height: 36px; width: auto; object-fit: contain; display: block; }
-.back-to-store {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--white);
-  text-decoration: none;
-  letter-spacing: 1px;
-  transition: color 0.3s;
-}
-.back-to-store:hover { color: var(--yellow); }
-.back-to-store i { font-size: 1.1rem; color: var(--yellow); }
+.logo img { height: 40px; width: auto; object-fit: contain; display: block; }
 
-/* HERO SECTION (Sin sombra negra, imagen completa y más arriba) */
+/* HERO SECTION (Foto cubre todo hasta el header + difuminado negro abajo) */
 .hero {
   position: relative;
-  background-color: var(--black);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 0 0 65px;
+  justify-content: flex-end;
+  padding: 110px 20px 75px;
+  background: url('Fotohero.png') center top / cover no-repeat;
   border-bottom: 2px solid var(--yellow);
 }
-.hero-media {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  background-color: var(--black);
-  overflow: hidden;
-}
-.hero-media img {
-  width: 100%;
-  height: auto;
-  max-height: 62vh;
-  object-fit: contain;
-  object-position: center top;
-  display: block;
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    #050505 0%,
+    rgba(5, 5, 5, 0.92) 26%,
+    rgba(5, 5, 5, 0.45) 48%,
+    rgba(5, 5, 5, 0) 70%
+  );
+  z-index: 1;
+  pointer-events: none;
 }
 .hero-content {
-  padding: 24px 20px 10px;
-  text-align: left;
   position: relative;
   z-index: 2;
+  width: 100%;
+  max-width: 650px;
 }
 .hero-title-wrap {
   display: flex;
@@ -132,7 +120,7 @@ header {
   flex-shrink: 0;
 }
 .hero-content h1 {
-  font-size: 3.2rem;
+  font-size: 3.3rem;
   font-weight: 700;
   line-height: 1;
   font-style: italic;
@@ -140,7 +128,7 @@ header {
   color: var(--white);
 }
 .hero-desc {
-  margin-top: 18px;
+  margin-top: 16px;
   font-size: 0.9rem;
   color: var(--text-muted-light);
   display: flex;
@@ -153,7 +141,7 @@ header {
   flex-shrink: 0;
 }
 .hero-cta {
-  margin-top: 26px;
+  margin-top: 24px;
 }
 
 /* BOTONES */
@@ -182,31 +170,6 @@ header {
   border-color: var(--yellow-hover);
   transform: translateY(-1px);
 }
-.btn-dark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: var(--black);
-  color: var(--yellow);
-  font-family: 'Oswald', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
-  border: 2px solid var(--black);
-  padding: 12px 28px;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  transition: all 0.25s;
-  border-radius: 4px;
-  text-decoration: none;
-  width: 100%;
-}
-.btn-dark:hover {
-  background: var(--yellow);
-  color: var(--black);
-  border-color: var(--yellow);
-}
 
 /* SCROLL DOWN INDICATOR */
 .scroll-indicator {
@@ -228,7 +191,7 @@ header {
   cursor: pointer;
 }
 
-/* ABOUT SECTION (Fondo blanco para lectura limpia) */
+/* ABOUT SECTION */
 .about-wrapper {
   background-color: var(--white);
   color: var(--text-dark);
@@ -240,20 +203,12 @@ header {
 }
 .section-pre {
   text-align: center;
-  font-size: 0.75rem;
-  color: var(--black);
+  font-size: 0.78rem;
+  color: var(--yellow);
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 6px;
-}
-.section-pre::after {
-  content: '';
-  display: block;
-  width: 36px;
-  height: 3px;
-  background: var(--yellow);
-  margin: 6px auto 0;
 }
 .section-title {
   text-align: center;
@@ -284,16 +239,27 @@ header {
   margin-bottom: 18px;
 }
 .trainer-name {
-  color: var(--black);
-  font-size: 1.25rem;
+  color: var(--yellow);
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: 1px;
   border-left: 4px solid var(--yellow);
   padding-left: 10px;
 }
-.social-mini { display: flex; gap: 14px; color: var(--black); font-size: 1.25rem; }
-.social-mini i { transition: color 0.25s; cursor: pointer; }
-.social-mini i:hover { color: var(--yellow); }
+.social-mini {
+  display: flex;
+  gap: 14px;
+  font-size: 1.3rem;
+}
+.social-mini a {
+  color: var(--gray-icon);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.25s;
+}
+.social-mini a:hover { color: var(--yellow); }
 
 .about-text { font-size: 0.9rem; color: var(--text-muted-dark); margin-bottom: 14px; }
 .about-text p { margin-bottom: 14px; }
@@ -332,20 +298,8 @@ header {
 .vid-thumb:hover { border-color: var(--yellow); }
 .vid-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.65; transition: opacity 0.25s; }
 .vid-thumb:hover img { opacity: 0.95; }
-.vid-thumb i { position: absolute; color: var(--yellow); font-size: 1.4rem; }
-
-/* QUICK FORM STRIP */
-.quick-form-strip {
-  background: var(--black-soft);
-  padding: 50px 20px;
-  text-align: center;
-  border-top: 1px solid var(--border-dark);
-  border-bottom: 1px solid var(--border-dark);
-}
-.quick-form-strip h3 { font-size: 1.5rem; letter-spacing: 1px; margin-bottom: 8px; color: var(--white); }
-.quick-form-strip h3 span { color: var(--yellow); }
-.quick-form-strip p { font-size: 0.75rem; color: var(--text-muted-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px; }
-.quick-form { max-width: 320px; margin: 0 auto; }
+.vid-thumb i { position: absolute; color: #B5B5B5; font-size: 1.5rem; transition: color 0.25s; }
+.vid-thumb:hover i { color: var(--white); }
 
 /* METODOLOGÍA */
 .what-we-do {
@@ -356,7 +310,6 @@ header {
   background: linear-gradient(rgba(5,5,5,0.82), rgba(5,5,5,0.92)), url('Fotometodologia.jpg') center/cover no-repeat;
 }
 .what-we-do .section-pre { color: var(--yellow); }
-.what-we-do .section-pre::after { background: var(--white); }
 .what-we-do .section-title { font-size: 2rem; margin-bottom: 45px; color: var(--white); }
 
 .services-flex {
@@ -443,36 +396,78 @@ header {
   border-radius: 6px;
   border: 1px solid var(--border-light);
   border-left: 4px solid var(--yellow);
+  text-decoration: none;
 }
-.c-icon { font-size: 1.8rem; color: var(--black); width: 36px; text-align: center; flex-shrink: 0; }
+.c-icon { font-size: 1.8rem; color: var(--gray-icon); width: 36px; text-align: center; flex-shrink: 0; }
 .c-text { text-align: left; }
 .c-text h4 { font-size: 0.65rem; color: var(--text-muted-dark); letter-spacing: 1px; margin-bottom: 2px; }
-.c-text p { font-size: 0.9rem; font-weight: 700; color: var(--black); }
+.c-text p { font-size: 0.9rem; font-weight: 700; color: var(--black); word-break: break-word; }
+
+/* QUICK FORM STRIP (Al fondo, justo antes del pie de página) */
+.quick-form-strip {
+  background: var(--black-soft);
+  padding: 55px 20px;
+  text-align: center;
+  border-top: 1px solid var(--border-dark);
+}
+.quick-form-strip h3 { font-size: 1.6rem; letter-spacing: 1px; margin-bottom: 8px; color: var(--white); }
+.quick-form-strip h3 span { color: var(--yellow); }
+.quick-form-strip p { font-size: 0.75rem; color: var(--text-muted-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 26px; }
+.quick-form { max-width: 320px; margin: 0 auto; }
 
 /* FOOTER */
 footer {
   background: var(--black);
   border-top: 3px solid var(--yellow);
-  padding: 32px 20px;
+  padding: 36px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 22px;
   text-align: center;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: var(--text-muted-light);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+.f-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.f-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.25rem;
+  color: var(--yellow);
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.f-logo img { height: 28px; width: auto; object-fit: contain; }
+.f-location {
+  font-size: 0.75rem;
+  color: var(--white);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+.f-sub {
+  font-size: 0.72rem;
+  color: var(--text-muted-light);
+  text-transform: none;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
 .f-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 22px; }
 .f-links a { color: var(--white); text-decoration: none; transition: color 0.2s; cursor: pointer; }
 .f-links a:hover { color: var(--yellow); }
 .f-social { display: flex; align-items: center; gap: 18px; }
-.f-social i { font-size: 1.2rem; color: var(--white); cursor: pointer; transition: color 0.2s; }
-.f-social i:hover { color: var(--yellow); }
-.f-logo { display: flex; align-items: center; gap: 10px; font-family: 'Oswald', sans-serif; font-size: 1.15rem; color: var(--yellow); letter-spacing: 1px; }
-.f-logo img { height: 28px; width: auto; object-fit: contain; }
+.f-social a { color: var(--gray-icon); font-size: 1.25rem; text-decoration: none; display: inline-flex; transition: color 0.2s; }
+.f-social a:hover { color: var(--yellow); }
 
 /* POPUP DISCRETO DE ACEPTACIÓN */
 .legal-banner {
@@ -558,37 +553,27 @@ footer {
    TABLET Y DESKTOP (Mejoras progresivas)
    ========================================= */
 @media (min-width: 768px) {
-  header { padding: 20px 50px; }
-  .logo img { height: 42px; }
+  header { padding: 24px 50px; }
+  .logo img { height: 46px; }
 
   .hero {
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: space-between;
-    min-height: calc(100vh - 82px);
-    padding: 20px 8% 60px;
-    gap: 40px;
+    padding: 140px 8% 85px;
+    background-position: center 15%;
   }
-  .hero-media {
-    flex: 1;
-    max-width: 50%;
-    align-items: flex-start;
-    margin-top: -20px;
+  .hero::after {
+    background: linear-gradient(
+      to top,
+      #050505 0%,
+      rgba(5, 5, 5, 0.88) 28%,
+      rgba(5, 5, 5, 0.35) 52%,
+      rgba(5, 5, 5, 0) 75%
+    );
   }
-  .hero-media img {
-    max-height: 82vh;
-    width: auto;
-    max-width: 100%;
-  }
-  .hero-content {
-    flex: 1;
-    padding: 0;
-  }
-  .hero-content h1 { font-size: 4.8rem; }
+  .hero-content h1 { font-size: 5rem; }
   .accent-line { width: 52px; }
-  .hero-desc { font-size: 0.95rem; max-width: 480px; }
+  .hero-desc { font-size: 0.95rem; max-width: 500px; }
 
-  .btn-accent, .btn-dark { width: auto; }
+  .btn-accent { width: auto; }
 
   .stats-row { padding: 22px 0; }
   .stat-val { font-size: 2.1rem; }
@@ -611,8 +596,9 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     text-align: left;
-    padding: 30px 50px;
+    padding: 36px 50px;
   }
+  .f-info { align-items: flex-start; }
 
   .legal-banner {
     flex-direction: row;
@@ -624,27 +610,21 @@ footer {
 }
 
 @media (min-width: 1100px) {
-  .hero-content h1 { font-size: 5.5rem; }
+  .hero-content h1 { font-size: 5.6rem; }
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER (Solo logo, sin texto JULS SALAS) -->
+<!-- HEADER (Solo logo, sin enlace a Lionatural Store) -->
 <header>
-  <a href="index.html" class="logo">
+  <a href="#" class="logo">
     <img src="LogoLIONHEART.png" alt="Logo LIONHEART ATHLETICS">
-  </a>
-  <a href="index.html" class="back-to-store">
-    <i class="ph ph-arrow-left"></i> LIONATURAL STORE
   </a>
 </header>
 
 <!-- HERO SECTION -->
 <section class="hero">
-  <div class="hero-media">
-    <img src="Fotohero.png" alt="Juls Salas Entrenador Personal">
-  </div>
   <div class="hero-content">
     <div class="hero-title-wrap">
       <div class="accent-line"></div>
@@ -678,9 +658,10 @@ footer {
     <div class="trainer-header">
       <div class="trainer-name">JULS SALAS</div>
       <div class="social-mini">
-        <i class="ph-fill ph-facebook-logo"></i>
-        <i class="ph-fill ph-instagram-logo"></i>
-        <i class="ph-fill ph-tiktok-logo"></i>
+        <a href="https://wa.me/573002158355" target="_blank" aria-label="WhatsApp"><i class="ph-fill ph-whatsapp-logo"></i></a>
+        <a href="mailto:livinglarge.project21@gmail.com" aria-label="Correo"><i class="ph-fill ph-envelope-simple"></i></a>
+        <a href="#" aria-label="Instagram"><i class="ph-fill ph-instagram-logo"></i></a>
+        <a href="#" aria-label="Facebook"><i class="ph-fill ph-facebook-logo"></i></a>
       </div>
     </div>
     
@@ -712,20 +693,9 @@ footer {
       </div>
     </div>
     
-    <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0TBooMBHKNg2Zo8zllViyRJqvGEMXbziUnTVY_JVYy2qfoMHiDepyTooCfn1NZaBZHZIY-3ad5" target="_blank" class="btn-dark">HAZ PARTE</a>
+    <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0TBooMBHKNg2Zo8zllViyRJqvGEMXbziUnTVY_JVYy2qfoMHiDepyTooCfn1NZaBZHZIY-3ad5" target="_blank" class="btn-accent">HAZ PARTE</a>
   </section>
 </div>
-
-<!-- QUICK FORM -->
-<section class="quick-form-strip">
-  <h3>¿LISTO PARA <span>EMPEZAR?</span></h3>
-  <p>ESCRÍBEME AL WHATSAPP PARA RECIBIR TU PROGRAMA PERSONALIZADO</p>
-  <div class="quick-form">
-    <a href="https://wa.me/573002158355" target="_blank" class="btn-accent">
-      <i class="ph-bold ph-whatsapp-logo" style="font-size: 1.3rem;"></i> CONTÁCTAME
-    </a>
-  </div>
-</section>
 
 <!-- METODOLOGÍA -->
 <section class="what-we-do">
@@ -776,47 +746,63 @@ footer {
   <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 35px;">PARA MÁS INFORMACIÓN</h2>
   
   <div class="contact-container">
-    <div class="c-item">
+    <a href="https://wa.me/573002158355" target="_blank" class="c-item">
       <i class="ph ph-whatsapp-logo c-icon"></i>
       <div class="c-text">
         <h4>WHATSAPP</h4>
         <p>+57 300 215 8355</p>
       </div>
-    </div>
-    <div class="c-item">
+    </a>
+    <a href="mailto:livinglarge.project21@gmail.com" class="c-item">
       <i class="ph ph-envelope-simple c-icon"></i>
       <div class="c-text">
         <h4>EMAIL</h4>
-        <p>lionatural@gmail.com</p>
+        <p>livinglarge.project21@gmail.com</p>
       </div>
-    </div>
+    </a>
     <div class="c-item">
       <i class="ph ph-map-pin c-icon"></i>
       <div class="c-text">
         <h4>UBICACIÓN</h4>
-        <p>Asesorías Online & Presencial</p>
+        <p>Barranquilla, Colombia — Online & Presencial</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- QUICK FORM (Ubicado al fondo, justo antes del pie de página) -->
+<section class="quick-form-strip">
+  <h3>¿LISTO PARA <span>EMPEZAR?</span></h3>
+  <p>ESCRÍBEME AL WHATSAPP PARA RECIBIR TU PROGRAMA PERSONALIZADO</p>
+  <div class="quick-form">
+    <a href="https://wa.me/573002158355" target="_blank" class="btn-accent">
+      <i class="ph-bold ph-whatsapp-logo" style="font-size: 1.3rem;"></i> CONTÁCTAME
+    </a>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
+  <div class="f-info">
+    <div class="f-logo">
+      <img src="LogoLIONHEART.png" alt="Logo LIONHEART ATHLETICS">
+      JULS SALAS
+    </div>
+    <div class="f-location">Barranquilla, Colombia</div>
+    <div class="f-sub">Asesorías Online & Presencial</div>
+  </div>
+
   <div class="f-links">
-    <a href="index.html">TIENDA LIONATURAL</a>
-    <a href="#sobre-mi">SOBRE MÍ</a>
     <a onclick="openModal('modal-terminos')">TÉRMINOS Y CONDICIONES</a>
     <a onclick="openModal('modal-privacidad')">POLÍTICA DE PRIVACIDAD</a>
   </div>
+
   <div class="f-social">
     <span>SÍGUEME</span>
-    <i class="ph ph-instagram-logo"></i>
-    <i class="ph ph-tiktok-logo"></i>
-    <i class="ph ph-facebook-logo"></i>
-  </div>
-  <div class="f-logo">
-    <img src="LogoLIONHEART.png" alt="Logo LIONHEART ATHLETICS">
-    LIONHEART ATHLETICS
+    <a href="https://wa.me/573002158355" target="_blank" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
+    <a href="mailto:livinglarge.project21@gmail.com" aria-label="Correo"><i class="ph ph-envelope-simple"></i></a>
+    <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+    <a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
   </div>
 </footer>
 
@@ -843,7 +829,7 @@ footer {
     <button class="legal-modal-close" onclick="closeModal('modal-privacidad')"><i class="ph ph-x"></i></button>
     <h3>Política de Privacidad</h3>
     <p>En cumplimiento de la Ley 1581 de 2012 de protección de datos personales en Colombia, informamos que los datos que suministres voluntariamente al agendar una entrevista de valoración o contactarnos por WhatsApp o correo electrónico (nombre, correo, teléfono y objetivos) serán utilizados únicamente para gestionar tu solicitud y prestar los servicios de asesoría.</p>
-    <p>No vendemos ni compartimos tu información personal con terceros con fines comerciales. En cualquier momento puedes solicitar la actualización, rectificación o eliminación de tus datos escribiendo a <strong>lionatural@gmail.com</strong>.</p>
+    <p>No vendemos ni compartimos tu información personal con terceros con fines comerciales. En cualquier momento puedes solicitar la actualización, rectificación o eliminación de tus datos escribiendo a <strong>livinglarge.project21@gmail.com</strong>.</p>
   </div>
 </div>
 
@@ -888,4 +874,4 @@ function closeOnBackdrop(event, id) {
 </script>
 
 </body>
-      </html>
+</html>
