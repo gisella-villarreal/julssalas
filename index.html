@@ -83,25 +83,23 @@ header {
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.55));
 }
 
-/* BOTÓN DE MENÚ */
+/* BOTÓN DE MENÚ (Sin fondo ni borde, solo las 3 líneas) */
 .menu-toggle {
-  width: 46px;
-  height: 46px;
-  background: rgba(5, 5, 5, 0.6);
-  backdrop-filter: blur(6px);
-  border: 1.5px solid var(--yellow);
-  border-radius: 6px;
+  background: transparent;
+  border: none;
   color: var(--yellow);
-  font-size: 1.6rem;
+  font-size: 2rem;
+  padding: 4px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background 0.25s, color 0.25s;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.7));
+  transition: color 0.25s, transform 0.2s;
 }
 .menu-toggle:hover {
-  background: var(--yellow);
-  color: var(--black);
+  color: var(--white);
+  transform: scale(1.05);
 }
 
 /* MENÚ LATERAL DESPLEGABLE */
@@ -698,7 +696,7 @@ footer {
 @media (min-width: 768px) {
   header { padding: 24px 50px; }
   .logo img { height: 76px; }
-  .menu-toggle { width: 50px; height: 50px; font-size: 1.75rem; }
+  .menu-toggle { font-size: 2.2rem; }
 
   .hero {
     padding: 150px 8% 85px;
@@ -1041,4 +1039,4 @@ function closeOnBackdrop(event, id) {
 </script>
 
 </body>
-  </html>
+</html>
