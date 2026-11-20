@@ -597,11 +597,44 @@ footer {
   letter-spacing: 0.3px;
 }
 .f-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 22px; }
-.f-links a { color: var(--white); text-decoration: none; transition: color 0.2s; cursor: pointer; }
+.f-links a { color: var(--white); text-decoration: none; transition: color 0.2s; }
 .f-links a:hover { color: var(--yellow); }
 .f-social { display: flex; align-items: center; gap: 18px; }
 .f-social a { color: var(--yellow-soft); font-size: 1.3rem; text-decoration: none; display: inline-flex; transition: color 0.2s; }
 .f-social a:hover { color: var(--yellow); }
+
+/* BOTÓN FLOTANTE VOLVER ARRIBA */
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background: var(--black);
+  color: var(--yellow);
+  border: 2px solid var(--yellow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  cursor: pointer;
+  z-index: 970;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background 0.25s, color 0.25s;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  background: var(--yellow);
+  color: var(--black);
+}
 
 /* POPUP DISCRETO DE ACEPTACIÓN */
 .legal-banner {
@@ -628,7 +661,7 @@ footer {
   font-size: 0.78rem;
 }
 .legal-banner p { margin: 0; line-height: 1.45; }
-.legal-banner a { color: var(--yellow); text-decoration: underline; cursor: pointer; }
+.legal-banner a { color: var(--yellow); text-decoration: underline; }
 .legal-banner-btn {
   background: var(--yellow);
   color: var(--black);
@@ -645,43 +678,6 @@ footer {
   transition: background 0.2s;
 }
 .legal-banner-btn:hover { background: var(--yellow-hover); }
-
-/* MODALES LEGALES */
-.legal-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(5, 5, 5, 0.8);
-  backdrop-filter: blur(4px);
-  z-index: 1000;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-.legal-modal-content {
-  background: var(--white);
-  color: var(--text-dark);
-  max-width: 600px;
-  width: 100%;
-  max-height: 82vh;
-  overflow-y: auto;
-  border-radius: 8px;
-  padding: 28px 24px;
-  position: relative;
-}
-.legal-modal-content h3 { color: var(--black); font-size: 1.35rem; margin-bottom: 14px; border-left: 4px solid var(--yellow); padding-left: 10px; }
-.legal-modal-content p { font-size: 0.85rem; color: var(--text-muted-dark); margin-bottom: 12px; }
-.legal-modal-close {
-  position: absolute;
-  top: 14px;
-  right: 16px;
-  background: none;
-  border: none;
-  font-size: 1.4rem;
-  color: var(--text-muted-dark);
-  cursor: pointer;
-}
-.legal-modal-close:hover { color: var(--black); }
 
 /* =========================================
    TABLET Y DESKTOP (Mejoras progresivas)
@@ -739,6 +735,8 @@ footer {
   }
   .f-info { align-items: flex-start; }
 
+  .back-to-top { bottom: 30px; right: 30px; width: 48px; height: 48px; font-size: 1.5rem; }
+
   .legal-banner {
     flex-direction: row;
     text-align: left;
@@ -773,16 +771,6 @@ footer {
     <button class="nav-close" onclick="toggleMenu()" aria-label="Cerrar menú">
       <i class="ph ph-x"></i>
     </button>
-  </div>
-
-  <div class="nav-links">
-    <a href="#inicio" onclick="toggleMenu()">Inicio</a>
-    <a href="#sobre-mi" onclick="toggleMenu()">Sobre Mí</a>
-    <a href="#metodologia" onclick="toggleMenu()">Metodología</a>
-    <a href="#empezar" onclick="toggleMenu()">Empezar</a>
-    <a href="https://bulkcream.pages.dev/" target="_blank" class="nav-bulkcream" onclick="toggleMenu()">
-      BULKCREAM <i class="ph ph-arrow-up-right"></i>
-    </a>
   </div>
 
   <div class="nav-footer">
@@ -938,8 +926,8 @@ footer {
   </div>
 
   <div class="f-links">
-    <a onclick="openModal('modal-terminos')">TÉRMINOS Y CONDICIONES</a>
-    <a onclick="openModal('modal-privacidad')">POLÍTICA DE PRIVACIDAD</a>
+    <a href="terminosycondiciones.html">TÉRMINOS Y CONDICIONES</a>
+    <a href="politicadeprivacidad.html">POLÍTICA DE PRIVACIDAD</a>
   </div>
 
   <div class="f-social">
@@ -951,31 +939,15 @@ footer {
   </div>
 </footer>
 
+<!-- BOTÓN FLOTANTE VOLVER ARRIBA -->
+<button class="back-to-top" id="back-to-top" onclick="scrollToTop()" aria-label="Volver arriba">
+  <i class="ph-bold ph-caret-up"></i>
+</button>
+
 <!-- POPUP DISCRETO DE ACEPTACIÓN -->
 <div class="legal-banner" id="legal-banner">
-  <p>Al continuar navegando en este sitio, aceptas nuestros <a onclick="openModal('modal-terminos')">Términos y Condiciones</a> y nuestra <a onclick="openModal('modal-privacidad')">Política de Privacidad</a>.</p>
+  <p>Al continuar navegando en este sitio, aceptas nuestros <a href="terminosycondiciones.html">Términos y Condiciones</a> y nuestra <a href="politicadeprivacidad.html">Política de Privacidad</a>.</p>
   <button class="legal-banner-btn" onclick="acceptLegal()">ACEPTAR</button>
-</div>
-
-<!-- MODAL TÉRMINOS Y CONDICIONES -->
-<div class="legal-modal" id="modal-terminos" onclick="closeOnBackdrop(event, 'modal-terminos')">
-  <div class="legal-modal-content">
-    <button class="legal-modal-close" onclick="closeModal('modal-terminos')"><i class="ph ph-x"></i></button>
-    <h3>Términos y Condiciones</h3>
-    <p>El acceso y uso del sitio web de Juls Salas / LIONHEART ATHLETICS implica la aceptación de estos términos. La información publicada tiene fines informativos y de orientación sobre servicios de entrenamiento personal y asesoría nutricional.</p>
-    <p>Los resultados de cualquier programa de entrenamiento o nutrición varían según la constancia, condiciones individuales y estado de salud de cada persona. Antes de iniciar cualquier plan físico o alimentario, se recomienda contar con valoración médica previa si existen condiciones preexistentes.</p>
-    <p>Las citas de valoración agendadas a través de Google Calendar o WhatsApp están sujetas a disponibilidad y confirmación. Todos los textos, imágenes y marca LIONHEART ATHLETICS son propiedad de su titular y no pueden reproducirse sin autorización.</p>
-  </div>
-</div>
-
-<!-- MODAL POLÍTICA DE PRIVACIDAD -->
-<div class="legal-modal" id="modal-privacidad" onclick="closeOnBackdrop(event, 'modal-privacidad')">
-  <div class="legal-modal-content">
-    <button class="legal-modal-close" onclick="closeModal('modal-privacidad')"><i class="ph ph-x"></i></button>
-    <h3>Política de Privacidad</h3>
-    <p>En cumplimiento de la Ley 1581 de 2012 de protección de datos personales en Colombia, informamos que los datos que suministres voluntariamente al agendar una entrevista de valoración o contactarnos por WhatsApp o correo electrónico (nombre, correo, teléfono y objetivos) serán utilizados únicamente para gestionar tu solicitud y prestar los servicios de asesoría.</p>
-    <p>No vendemos ni compartimos tu información personal con terceros con fines comerciales. En cualquier momento puedes solicitar la actualización, rectificación o eliminación de tus datos escribiendo a <strong>livinglarge.project21@gmail.com</strong>.</p>
-  </div>
 </div>
 
 <script>
@@ -1002,6 +974,20 @@ function toggleReadMore() {
   }
 }
 
+// Botón flotante volver arriba
+window.addEventListener("scroll", function () {
+  var btn = document.getElementById("back-to-top");
+  if (window.scrollY > 400) {
+    btn.classList.add("show");
+  } else {
+    btn.classList.remove("show");
+  }
+});
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 // Aviso discreto legal
 window.addEventListener("DOMContentLoaded", function () {
   if (!localStorage.getItem("lionheart_legal_accepted")) {
@@ -1013,22 +999,7 @@ function acceptLegal() {
   localStorage.setItem("lionheart_legal_accepted", "true");
   document.getElementById("legal-banner").style.display = "none";
 }
-
-// Modales legales
-function openModal(id) {
-  document.getElementById(id).style.display = "flex";
-}
-
-function closeModal(id) {
-  document.getElementById(id).style.display = "none";
-}
-
-function closeOnBackdrop(event, id) {
-  if (event.target.id === id) {
-    closeModal(id);
-  }
-}
 </script>
 
 </body>
-  </html>
+</html>
